@@ -82,7 +82,7 @@ const NavigationBar = () => {
           Fejsbuk
         </NavLink>
       </NavLinks>
-      <JoinButton>придружи нам се</JoinButton>
+      <JoinButton>Pridruži nam se</JoinButton>
     </NavContainer>
   );
 };
