@@ -1,76 +1,90 @@
 // src/components/NavigationBar.tsx
-import React from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import React, { useState } from "react";
+import { useMediaQuery } from "react-responsive";
+
+import {
+  MobileNavWrapper,
+  MobileNavContainer,
+  NavContainer,
+  NavLinks,
+  NavLink,
+  MobileNavLink,
+  MobileNavLinks,
+  JoinButton,
+  LogoContainer,
+  BurgerIcon,
+  CorpText,
+} from "./styles";
 
 import Logo from "../../assets/logo/logo.svg";
 
-const NavContainer = styled.nav`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #eeeeee;
-    padding: 1rem 2.5rem;
-    box-shadow: 0px 3px 6px #00000073;
-    border-radius: 75px;
-    margin: 20px 50px;
-    opacity: 1;
-`;
-
-const NavLinks = styled.div`
-    display: flex;
-    gap: 2rem;
-`;
-
-const NavLink = styled(Link)`
-    color: #090909;
-    text-decoration: none;
-    font-size: 1.2rem;
-    position: relative;
-    padding: 0.5rem;
-    transition: color 0.3s ease;
-
-    &:hover {
-        color: white;
-    }
-`;
-
-const JoinButton = styled.button`
-    background-color: #98c18e;
-    padding: 10px 18px;
-    font-size: 1.2rem;
-    border-radius: 25px;
-    border-width: 0;
-    cursor: pointer;
-
-    &:hover {
-        color: white;
-    }
-`;
-
 const NavigationBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  if (isMobile)
     return (
-        <NavContainer>
-            <div>
-                <img width={60} src={Logo} />
-            </div>
-            <NavLinks>
-                <NavLink to="/about" activeClassName="active">
-                    About
-                </NavLink>
-                <NavLink to="/services" activeClassName="active">
-                    Services
-                </NavLink>
-                <NavLink to="/contact" activeClassName="active">
-                    Contact
-                </NavLink>
-                <NavLink to="/blog" activeClassName="active">
-                    Blog
-                </NavLink>
-            </NavLinks>
-            <JoinButton>Join US</JoinButton>
-        </NavContainer>
+      <MobileNavWrapper isOpen={isOpen}>
+        <MobileNavContainer>
+          <LogoContainer>
+            <img src={Logo} />
+          </LogoContainer>
+
+          <BurgerIcon active={isOpen} onClick={toggleMenu}>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </BurgerIcon>
+        </MobileNavContainer>
+
+        <MobileNavLinks isOpen={isOpen}>
+          <MobileNavLink to="/about" activeclassname="active">
+            O nama
+          </MobileNavLink>
+          <MobileNavLink to="/services" activeclassname="active">
+            Usluge
+          </MobileNavLink>
+          <MobileNavLink to="/contact" activeclassname="active">
+            Kontakt
+          </MobileNavLink>
+          <MobileNavLink to="/blog" activeclassname="active">
+            Fejsbuk
+          </MobileNavLink>
+        </MobileNavLinks>
+
+        <CorpText active={isOpen}>Unity Hub</CorpText>
+      </MobileNavWrapper>
     );
+
+  return (
+    <NavContainer>
+      <LogoContainer>
+        <img src={Logo} />
+      </LogoContainer>
+
+      <NavLinks>
+        <NavLink to="/about" activeclassname="active">
+          O nama
+        </NavLink>
+        <NavLink to="/services" activeclassname="active">
+          Usluge
+        </NavLink>
+        <NavLink to="/contact" activeclassname="active">
+          Kontakt
+        </NavLink>
+        <NavLink to="/blog" activeclassname="active">
+          Fejsbuk
+        </NavLink>
+      </NavLinks>
+      <JoinButton>придружи нам се</JoinButton>
+    </NavContainer>
+  );
 };
 
 export default NavigationBar;

@@ -1,29 +1,38 @@
+import React from "react";
 import { Routes, Route } from "react-router-dom";
+import styled from "styled-components";
 
 import NavigationBar from "./components/Navigation/NavigationBar";
+import Footer from "./components/Footer/Footer";
 import Home from "./pages/home/Home";
 import Contact from "./pages/contact/Contact";
 
-import styled from "styled-components";
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+`;
 
-const Container = styled.nav`
-    background-color: #eeeeee;
+const Content = styled.div`
+    flex-grow: 1;
+    padding: 1rem 4rem;
 `;
 
 function App() {
     return (
-        <Container>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/contact" element={<Contact />} />
-            </Routes>
+        <Wrapper>
             <NavigationBar />
-            <Container>
-              <div>
-                <h1>Tes</h1>
-              </div>
-            </Container>
-        </Container>
+            <Content>
+                <Routes>
+                    <Route path="/" element={<Contact />} />
+                    <Route path="/about" element={<Home />} />
+                    <Route path="/services" element={<Home />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/blog" element={<Home />} />
+                </Routes>
+            </Content>
+            <Footer />
+        </Wrapper>
     );
 }
 
