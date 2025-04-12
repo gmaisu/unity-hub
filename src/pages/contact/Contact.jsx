@@ -54,7 +54,6 @@ const Contact = () => {
               width="100%"
               height="300"
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
             />
           </MapContainer>
         </>

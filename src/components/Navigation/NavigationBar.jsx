@@ -1,5 +1,6 @@
 // src/components/NavigationBar.tsx
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 
 import {
@@ -82,7 +83,7 @@ const NavigationBar = () => {
           Fejsbuk
         </NavLink>
       </NavLinks>
-      <JoinButton>Pridruži nam se</JoinButton>
+      <JoinButton><Link to="/contact" style={{textDecoration:"none", color: "#090909"}}>Pridruži nam se</Link></JoinButton>
     </NavContainer>
   );
 };

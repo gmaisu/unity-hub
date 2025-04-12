@@ -24,11 +24,14 @@ export const TextContainer = styled.div`
 `;
 
 export const MobileTitle = styled.p`
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
     margin: 0;
-`;
 
+    @media (max-width: 390px) {
+      font-size: 1.8rem;
+    }
+`;
 
 export const SocialText = styled.span`
     font-weight: bold;
@@ -43,9 +46,9 @@ export const ContactInfo = styled.div`
     font-size: 1rem;
     flex-direction: column;
 
-      @media (max-width: 768px) {
-margin-bottom: 1rem;
-  }
+    @media (max-width: 768px) {
+        margin-bottom: 1rem;
+    }
 `;
 
 export const ContactItem = styled.div`
@@ -55,6 +58,10 @@ export const ContactItem = styled.div`
 export const ContactTitle = styled.div`
     font-weight: bold;
     margin-bottom: 0.5rem;
+
+    @media (max-width: 390px) {
+      font-size: 0.9rem;
+    }
 `;
 
 export const MapContainer = styled.div`

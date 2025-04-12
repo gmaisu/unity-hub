@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify";
 
-import axios from 'axios';
+import axios from "axios";
 
 import {
   FormContainer,
@@ -12,22 +13,33 @@ import {
   InputField,
   TextAreaField,
   SubmitButton,
+  Spinner,
 } from "./styles";
 
 const ContactForm = () => {
-  const { register, handleSubmit } = useForm();
+  const [sending, setSending] = useState(false);
+  const { register, handleSubmit, reset } = useForm();
 
-  const sendData = async (formData) => {  
+  const sendData = async (formData) => {
+    setSending(true);
+
     try {
-      const response = await axios.post('https://terapijskiprostor.com/api/contact/submit', formData, {
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      });
-  
-      console.log('Form submitted successfully:', response.data);
+      await axios
+        .post("https://terapijskiprostor.com/api/contact/submit", formData, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then(() => {
+          setSending(false);
+          reset();
+        });
     } catch (error) {
-      console.error('Error submitting form:', error.response ? error.response.data : error.message);
+      setSending(false);
+      toast.error("Error. Try Later", {
+        position: "top-center",
+        className: "toast-message",
+      });
     }
   };
 
@@ -80,8 +92,11 @@ const ContactForm = () => {
           placeholder="Unesite svoju poruku..."
         />
 
-        <SubmitButton type="submit">Prosleđivanje</SubmitButton>
+        <SubmitButton type="submit" disabled={sending}>
+          {sending ? <Spinner /> : <>Prosleđivanje</>}
+        </SubmitButton>
       </Form>
+      <ToastContainer />
     </FormContainer>
   );
 };

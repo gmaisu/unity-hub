@@ -15,6 +15,28 @@ export const MobileNavWrapper = styled.div`
             margin: 0;
             border-radius: 0;
     `};
+
+    @media (max-width: 480px) {
+        padding: 0.8rem 2rem;
+        margin: 10px;
+
+        ${({ isOpen }) =>
+        isOpen &&
+        `
+            margin: 0;
+        `};
+    }
+
+    @media (max-width: 390px) {
+        padding: 0.5rem 1.5rem;
+        margin: 8px;
+
+        ${({ isOpen }) =>
+        isOpen &&
+        `
+            margin: 0;
+        `};
+    }
 `;
 
 export const MobileNavContainer = styled.div`
@@ -200,6 +222,37 @@ export const BurgerIcon = styled.div`
                 left: 50%;
             }
         `}
+    }
+
+    @media (max-width: 480px) {
+        width: 45px;
+        height: 30px;
+
+        span {
+            height: 2px;
+
+            &:nth-child(1) {
+                top: 0px;
+            }
+            &:nth-child(2) {
+                top: 15px;
+            }
+            &:nth-child(3) {
+                top: 15px;
+            }
+            &:nth-child(4) {
+                top: 30px;
+            }
+        }
+    }
+
+    @media (max-width: 390px) {
+        width: 40px;
+        height: 30px;
+
+        span {
+            height: 2px;
+        }
     }
 `;
 

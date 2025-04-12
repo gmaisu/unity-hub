@@ -51,8 +51,7 @@ const Location = () => {
       <ContactInfo>
         <ContactItem>
           <ContactTitle>
-            <SocialText>E-pošta: </SocialText>
-            kontakt@terapijskiprostor.com
+            <SocialText>E-pošta: </SocialText> kontakt@terapijskiprostor.com
           </ContactTitle>
         </ContactItem>
         <ContactItem>

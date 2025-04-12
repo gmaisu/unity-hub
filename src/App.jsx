@@ -16,6 +16,14 @@ const Wrapper = styled.div`
 const Content = styled.div`
     flex-grow: 1;
     padding: 1rem 4rem;
+
+    @media (max-width: 480px) {
+        padding: 1rem 2rem;
+    }
+
+    @media (max-width: 390px) {
+        padding: 1rem;
+    }
 `;
 
 function App() {
