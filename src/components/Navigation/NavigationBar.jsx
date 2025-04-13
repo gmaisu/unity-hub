@@ -30,7 +30,7 @@ const NavigationBar = () => {
 
   if (isMobile)
     return (
-      <MobileNavWrapper isOpen={isOpen}>
+      <MobileNavWrapper isopen={isOpen}>
         <MobileNavContainer>
           <LogoContainer>
             <img src={Logo} />
@@ -44,7 +44,7 @@ const NavigationBar = () => {
           </BurgerIcon>
         </MobileNavContainer>
 
-        <MobileNavLinks isOpen={isOpen}>
+        <MobileNavLinks isopen={isOpen}>
           <MobileNavLink to="/about" activeclassname="active">
             O nama
           </MobileNavLink>

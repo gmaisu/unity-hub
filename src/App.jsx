@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Provider } from "react-redux";
 
 import styled from "styled-components";
 
@@ -11,8 +10,6 @@ import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
 import Services from "./pages/services/Services";
 import Blog from "./pages/blog/Blog";
-
-import store from "./app/store";
 
 const Wrapper = styled.div`
   display: flex;
@@ -52,7 +49,7 @@ const App = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname === "/about") {
+    if (location.pathname === "/about" || location.pathname === "/") {
       setBg("about");
     } else {
       setBg("");
@@ -60,21 +57,19 @@ const App = () => {
   }, [location.pathname]);
 
   return (
-    <Provider store={store}>
-      <Wrapper bg={bg}>
-        <NavigationBar />
-        <Content>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/blog" element={<Blog />} />
-          </Routes>
-        </Content>
-        <Footer />
-      </Wrapper>
-    </Provider>
+    <Wrapper bg={bg}>
+      <NavigationBar />
+      <Content>
+        <Routes>
+          <Route path="/" element={<About />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
+        </Routes>
+      </Content>
+      <Footer />
+    </Wrapper>
   );
 };
 

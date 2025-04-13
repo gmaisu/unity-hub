@@ -19,7 +19,6 @@ export const Map = () => {
         width="100%"
         height="300"
         loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
       />
     </MapContainer>
   );
@@ -35,7 +34,6 @@ const Location = () => {
           width="100%"
           height="300"
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
         />
       </MapContainer>
 
