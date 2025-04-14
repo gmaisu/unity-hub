@@ -5,7 +5,6 @@ import styled from "styled-components";
 
 import NavigationBar from "./components/Navigation/NavigationBar";
 import Footer from "./components/Footer/Footer";
-import Home from "./pages/home/Home";
 import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
 import Services from "./pages/services/Services";
@@ -19,16 +18,16 @@ const Wrapper = styled.div`
   flex-direction: column;
   min-height: 100vh;
 
-  ${({ bgWeb, bgMobile }) =>
-    bgWeb && bgMobile &&
+  ${({ bgweb, bgmobile }) =>
+    bgweb && bgmobile &&
     `
-        background-image: url(${bgWeb});
+        background-image: url(${bgweb});
         background-size: cover;
         background-position: top;
         background-repeat: no-repeat;
 
         @media (max-width: 480px) {
-            background-image: url(${bgWeb});
+            background-image: url(${bgmobile});
         }
     `};
 `;
@@ -76,7 +75,7 @@ const App = () => {
   }, [location.pathname]);
 
   return (
-    <Wrapper bgWeb={bgWeb} bgMobile={bgMobile}>
+    <Wrapper bgweb={bgWeb} bgmobile={bgMobile}>
       <NavigationBar />
       <Content>
         <Routes>

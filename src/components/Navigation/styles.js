@@ -162,6 +162,7 @@ export const JoinButton = styled.button`
 export const LogoContainer = styled.div`
   width: 70px;
   height: 70px;
+  cursor: pointer;
 
   @media (max-width: 768px) {
     width: 50px;

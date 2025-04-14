@@ -1,6 +1,6 @@
 // src/components/NavigationBar.tsx
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 
 import {
@@ -20,22 +20,25 @@ import {
 import Logo from "../../assets/logo/logo.svg";
 
 const NavigationBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
+  const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const redirect = () => {
+    navigate("/");
+  };
+
   if (isMobile)
     return (
       <MobileNavWrapper isopen={isOpen}>
         <MobileNavContainer>
-          <LogoContainer>
-            <Link to="/contact">
+          <LogoContainer onClick={redirect}>
             <img src={Logo} />
-            </Link>
           </LogoContainer>
 
           <BurgerIcon active={isOpen} onClick={toggleMenu}>
@@ -67,7 +70,7 @@ const NavigationBar = () => {
 
   return (
     <NavContainer>
-      <LogoContainer>
+      <LogoContainer onClick={redirect}>
         <img src={Logo} />
       </LogoContainer>
 
@@ -85,7 +88,14 @@ const NavigationBar = () => {
           Fejsbuk
         </NavLink>
       </NavLinks>
-      <JoinButton><Link to="/contact" style={{textDecoration:"none", color: "#090909"}}>Pridruži nam se</Link></JoinButton>
+      <JoinButton>
+        <Link
+          to="/contact"
+          style={{ textDecoration: "none", color: "#090909" }}
+        >
+          Pridruži nam se
+        </Link>
+      </JoinButton>
     </NavContainer>
   );
 };
