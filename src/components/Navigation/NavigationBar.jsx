@@ -33,7 +33,9 @@ const NavigationBar = () => {
       <MobileNavWrapper isopen={isOpen}>
         <MobileNavContainer>
           <LogoContainer>
+            <Link to="/contact">
             <img src={Logo} />
+            </Link>
           </LogoContainer>
 
           <BurgerIcon active={isOpen} onClick={toggleMenu}>

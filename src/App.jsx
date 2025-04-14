@@ -11,21 +11,24 @@ import About from "./pages/about/About";
 import Services from "./pages/services/Services";
 import Blog from "./pages/blog/Blog";
 
+import AboutBackground from "./assets/bg/about.webp";
+import AboutBackgroundMobile from "./assets/bg/about-mobile.webp";
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 
-  ${({ bg }) =>
-    bg &&
+  ${({ bgWeb, bgMobile }) =>
+    bgWeb && bgMobile &&
     `
-        background-image: url(/src/assets/bg/${bg}.webp);
+        background-image: url(${bgWeb});
         background-size: cover;
         background-position: top;
         background-repeat: no-repeat;
 
         @media (max-width: 480px) {
-            background-image: url(/src/assets/bg/${bg}-mobile.webp);
+            background-image: url(${bgWeb});
         }
     `};
 `;
@@ -43,21 +46,37 @@ const Content = styled.div`
   }
 `;
 
+const PAGE_BACKGROUNDS = {
+  "/": {
+    web: AboutBackground,
+    mobile: AboutBackgroundMobile,
+  },
+  "/about": {
+    web: AboutBackground,
+    mobile: AboutBackgroundMobile,
+  },
+};
+
 const App = () => {
-  const [bg, setBg] = useState("");
+  const [bgWeb, setBgWeb] = useState(null);
+  const [bgMobile, setBgMobile] = useState(null);
 
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname === "/about" || location.pathname === "/") {
-      setBg("about");
+    const page = PAGE_BACKGROUNDS[location.pathname];
+
+    if (page != null && page != undefined) {
+      setBgWeb(page.web);
+      setBgMobile(page.mobile);
     } else {
-      setBg("");
+      setBgWeb(null);
+      setBgMobile(null);
     }
   }, [location.pathname]);
 
   return (
-    <Wrapper bg={bg}>
+    <Wrapper bgWeb={bgWeb} bgMobile={bgMobile}>
       <NavigationBar />
       <Content>
         <Routes>
