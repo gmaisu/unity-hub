@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 
-import axios from "axios";
+import axios from '../../api/axios';
 
 import {
   FormContainer,
@@ -25,11 +25,7 @@ const ContactForm = () => {
 
     try {
       await axios
-        .post("https://terapijskiprostor.com/api/contact/submit", formData, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
+        .post("/contact/submit", formData)
         .then(() => {
           setSending(false);
           reset();

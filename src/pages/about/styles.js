@@ -58,6 +58,6 @@ export const JoinButton = styled.button`
   font-family: Gilroy-Light;
 
   &:hover {
-    color: white;
+    color: #ffffff;
   }
 `;

@@ -9,6 +9,7 @@ import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
 import Services from "./pages/services/Services";
 import Blog from "./pages/blog/Blog";
+import BlogPost from "./pages/blog-post/BlogPost";
 
 import AboutBackground from "./assets/bg/about.webp";
 import AboutBackgroundMobile from "./assets/bg/about-mobile.webp";
@@ -84,6 +85,7 @@ const App = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
         </Routes>
       </Content>
       <Footer />

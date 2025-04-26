@@ -71,6 +71,10 @@ export const SubmitButton = styled.button`
   background-color: #b2ceab;
   border-radius: 30px;
   font-family: "Gilroy-Light", lighter;
+
+  &:hover {
+    color: #ffffff;
+  }
 `;
 
 const spin = keyframes`
