@@ -8,8 +8,16 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-content: space-around;
   margin-bottom: 60px;
-  margin-top: 20px;
   gap: 3rem;
+  padding: 12rem 9rem 1rem;
+
+  @media (max-width: 1440px) {
+      padding: 12rem 5rem 1rem;
+  }
+
+  @media (max-width: 480px) {
+      padding: 10rem 1rem 1rem;
+  }
 `;
 
 export const BackLink = styled(Link)`

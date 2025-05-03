@@ -3,11 +3,14 @@ import styled from "styled-components";
 
 export const MobileNavWrapper = styled.div`
   background-color: #eeeeee;
-  padding: 2rem 3rem;
   box-shadow: 0px 3px 6px #00000073;
   border-radius: 75px;
-  margin: 20px 40px;
+  margin: 20px 0;
   opacity: 1;
+
+  position: absolute;
+  z-index: 999;
+  width: 100%;
 
   ${({ isopen }) =>
     isopen &&
@@ -17,9 +20,6 @@ export const MobileNavWrapper = styled.div`
     `};
 
   @media (max-width: 480px) {
-    padding: 0.8rem 2rem;
-    margin: 10px;
-
     ${({ isopen }) =>
       isopen &&
       `
@@ -28,9 +28,6 @@ export const MobileNavWrapper = styled.div`
   }
 
   @media (max-width: 390px) {
-    padding: 0.5rem 1.5rem;
-    margin: 8px;
-
     ${({ isopen }) =>
       isopen &&
       `
@@ -38,6 +35,10 @@ export const MobileNavWrapper = styled.div`
         `};
   }
 `;
+
+export const MobileNavPaddedContainer = styled.div`
+  padding: 2rem 3rem;
+`
 
 export const MobileNavContainer = styled.div`
   display: flex;
@@ -53,8 +54,18 @@ export const NavContainer = styled.nav`
   padding: 1rem 3rem;
   box-shadow: 0px 3px 6px #00000073;
   border-radius: 75px;
-  margin: 20px 50px;
   opacity: 1;
+
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  width: 80%;
+
+  @media (max-width: 1440px) {
+    top: 10%;
+  }
 
   @media (max-width: 768px) {
     ${({ isopen }) =>

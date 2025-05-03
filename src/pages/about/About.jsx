@@ -5,9 +5,11 @@ import { Container, LogoContainer, Header, Description, JoinButton } from "./sty
 
 import Logo from "../../assets/logo/logo.svg";
 
+import AboutBackground from "../../assets/bg/about.webp";
+
 const About = () => {
   return (
-    <Container>
+    <Container bgphoto={AboutBackground}>
       <LogoContainer>
         <img src={Logo} />
       </LogoContainer>

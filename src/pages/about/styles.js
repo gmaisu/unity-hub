@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin-bottom: 100px;
   display: flex;
   text-align: center;
   align-items: center;
@@ -9,11 +8,24 @@ export const Container = styled.div`
   align-content: space-around;
   gap: 3rem;
   color: #ffffff;
+  padding: 15rem 0 5rem 0;
 
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 0;
   }
+    
+  @media (max-width: 480px) {
+    padding: 10rem 0 5rem 0;
+  }
+
+    ${({ bgphoto }) =>
+    bgphoto &&
+    `
+        background-image: url(${bgphoto});
+        background-size: cover;
+    `};
+
 `;
 
 export const LogoContainer = styled.div`

@@ -6,8 +6,20 @@ export const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   align-content: space-around;
-  margin-bottom: 60px;
   gap: 3rem;
+  padding: 14rem 9rem 5rem;
+  
+  @media (max-width: 1280px) {
+    padding: 14rem 5rem 5rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 10rem 1rem 5rem;
+  }
+
+  @media (max-width: 390px) {
+    padding: 10rem 2rem 2rem;
+  }
 `;
 
 export const Header = styled.h1`

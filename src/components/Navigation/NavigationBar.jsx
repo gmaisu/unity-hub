@@ -6,6 +6,7 @@ import { useMediaQuery } from "react-responsive";
 import {
   MobileNavWrapper,
   MobileNavContainer,
+  MobileNavPaddedContainer,
   NavContainer,
   NavLinks,
   NavLink,
@@ -36,6 +37,7 @@ const NavigationBar = () => {
   if (isMobile)
     return (
       <MobileNavWrapper isopen={isOpen}>
+        <MobileNavPaddedContainer>
         <MobileNavContainer>
           <LogoContainer onClick={redirect}>
             <img src={Logo} />
@@ -65,6 +67,7 @@ const NavigationBar = () => {
         </MobileNavLinks>
 
         <CorpText active={isOpen}>Unity Hub</CorpText>
+        </MobileNavPaddedContainer>
       </MobileNavWrapper>
     );
 

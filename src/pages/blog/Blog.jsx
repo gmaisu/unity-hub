@@ -23,7 +23,19 @@ const Blog = () => {
         setPage(data.page);
         setSize(data.size);
         setTotalItems(data.total);
-        setPosts(data.result);
+
+        const postsList = data.result;
+        const size = postsList.length;
+
+        if (size % 3 != 0) {
+          var x = size - (size % 3) + 3 - size;
+
+          for (let i = 0; i < x; i++) {
+            postsList.push({ slug: "empty" });
+          }
+        }
+
+        setPosts(postsList);
       })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);

@@ -24,7 +24,7 @@ const BlogPostItem = ({ image, title, description, slug, timestamp }) => {
 
           <BottomContainer>
             <BrandedDate timestamp={timestamp} />
-            <ReadRedirectLink to={`/blog/${slug}`}>Read</ReadRedirectLink>
+            <ReadRedirectLink to={`/blog/${slug}`}>Čitati</ReadRedirectLink>
           </BottomContainer>
         </>
       )}
