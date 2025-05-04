@@ -24,7 +24,7 @@ import {
   Button,
   ThirdSectionInnerText,
   FourthSectionInnerText,
-  PaddedContainer
+  PaddedContainer,
 } from "./styles.js";
 
 const Landing = () => {
@@ -35,7 +35,9 @@ const Landing = () => {
       <VideoSection>
         {isMobile ? (
           <MobileContainer>
-            <MainOverlayText ismobile>Vaš prostor za terapiju i rast</MainOverlayText>
+            <MainOverlayText ismobile>
+              Vaš prostor za <br /> terapiju i rast
+            </MainOverlayText>
             <ButtonsSection ismobile>
               <SecondOverlayText>
                 Osnaživanje stručnjaka za mentalno zdravlje sa fleksibilnim,{" "}
@@ -75,10 +77,12 @@ const Landing = () => {
               />
               Your browser does not support HTML5 video.
             </VideoContainer>
-            <MainOverlayText>Vaš prostor za terapiju i rast</MainOverlayText>
+            <MainOverlayText>
+              Vaš prostor za <br /> terapiju i rast
+            </MainOverlayText>
             <ButtonsSection>
               <SecondOverlayText>
-                Osnaživanje stručnjaka za mentalno zdravlje sa fleksibilnim,{" "}
+                Osnaživanje stručnjaka za mentalno zdravlje sa fleksibilnim,
                 <br />
                 pristupačnim i bezbednim prostorima
               </SecondOverlayText>
@@ -118,7 +122,7 @@ const Landing = () => {
             <BulletedIem>Bezbedno i poverljivo okruženje</BulletedIem>
           </BulletedList>
         </ColumnSection>
-        <div>"
+        <div>
           <RightPhoto src="https://terapijskiprostor.com/images/background-landing-one.webp" />
         </div>
       </RowSection>

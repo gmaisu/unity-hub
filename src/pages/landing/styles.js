@@ -32,6 +32,10 @@ export const MainOverlayText = styled.p`
     width: 50%;
   }
 
+  @media (max-width: 1280px) {
+    font-size: 3.5rem;
+  }
+
   @media (max-width: 1024px) {
     font-size: 4rem;
   }
@@ -56,8 +60,11 @@ export const ButtonsSection = styled.div`
   left: 60%;
   width: 30%;
 
-  @media (max-width: 1440px) {
+  @media (max-width: 1680px) {
     top: 60%;
+  }
+
+  @media (max-width: 1440px) {
     left: 55%;
     width: 40%;
   }
@@ -114,7 +121,10 @@ export const ButtonsContainer = styled.div`
   justify-content: space-between;
 
   @media (max-width: 768px) {
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
   }
 `;
 
@@ -195,7 +205,7 @@ export const RowSection = styled.div`
         padding: ${padding};
     `};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1280px) {
     flex-direction: column;
   }
 `;
@@ -223,6 +233,10 @@ export const GreenBigText = styled.p`
   font-size: 4rem;
   font-family: "Gilroy";
   font-weight: bold;
+
+  @media (max-width: 1280px) {
+    width: 95%;
+  }
 
   @media (max-width: 1024px) {
     font-size: 2rem;
@@ -274,6 +288,11 @@ export const BulletedIem = styled.li`
     font-size: 2rem;
     width: 100%;
   }
+
+  @media (max-width: 360px) {
+    font-size: 1.2rem;
+    width: 100%;
+  }
 `;
 
 export const WhiteBigText = styled.p`
@@ -283,6 +302,10 @@ export const WhiteBigText = styled.p`
   font-size: 6rem;
   font-family: "Gilroy";
   font-weight: bold;
+
+  @media (max-width: 1024px) {
+    font-size: 4rem;
+  }
 
   @media (max-width: 768px) {
     font-size: 3rem;
@@ -313,12 +336,8 @@ export const ThirdSectionInnerText = styled.p`
   text-align: left;
   text-shadow: 0px 3px 6px #00000073;
 
-  @media (max-width: 1440px) {
-    font-size: 1.8rem;
-  }
-
   @media (max-width: 1024px) {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
 
   @media (max-width: 768px) {
@@ -368,9 +387,17 @@ export const PaddedContainer = styled.div`
   gap: 3rem;
   padding: 100px;
 
+  @media (max-width: 1366px) {
+    padding: 90px;
+  }
+
+  @media (max-width: 1280px) {
+    padding: 45px;
+  }
+
   @media (max-width: 768px) {
-    padding: 50px;
     text-align: center;
     align-items: center;
+    padding: 25px;
   }
 `;

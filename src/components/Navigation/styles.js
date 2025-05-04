@@ -9,14 +9,17 @@ export const MobileNavWrapper = styled.div`
   opacity: 1;
 
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 999;
-  width: 100%;
+  width: 90%;
 
   ${({ isopen }) =>
     isopen &&
     `
-            margin: 0;
-            border-radius: 0;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
     `};
 
   @media (max-width: 480px) {
@@ -38,7 +41,11 @@ export const MobileNavWrapper = styled.div`
 
 export const MobileNavPaddedContainer = styled.div`
   padding: 2rem 3rem;
-`
+
+  @media (max-width: 360px) {
+    padding: 1rem 2rem;
+  }
+`;
 
 export const MobileNavContainer = styled.div`
   display: flex;
@@ -65,6 +72,10 @@ export const NavContainer = styled.nav`
 
   @media (max-width: 1440px) {
     top: 10%;
+  }
+
+  @media (max-width: 1024px) {
+    top: 5%;
   }
 
   @media (max-width: 768px) {

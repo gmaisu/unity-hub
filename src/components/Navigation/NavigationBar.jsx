@@ -1,6 +1,6 @@
 // src/components/NavigationBar.tsx
 import React, { useState } from "react";
-import { Link, useNavigate  } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 
 import {
@@ -21,10 +21,10 @@ import {
 import Logo from "../../assets/logo/logo.svg";
 
 const NavigationBar = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const navigate = useNavigate();
 
   const [isOpen, setIsOpen] = useState(false);
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -32,41 +32,45 @@ const NavigationBar = () => {
 
   const redirect = () => {
     navigate("/");
+    
+    if (isOpen) {
+      toggleMenu();
+    }
   };
 
   if (isMobile)
     return (
       <MobileNavWrapper isopen={isOpen}>
         <MobileNavPaddedContainer>
-        <MobileNavContainer>
-          <LogoContainer onClick={redirect}>
-            <img src={Logo} />
-          </LogoContainer>
+          <MobileNavContainer>
+            <LogoContainer onClick={redirect}>
+              <img src={Logo} />
+            </LogoContainer>
 
-          <BurgerIcon active={isOpen} onClick={toggleMenu}>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </BurgerIcon>
-        </MobileNavContainer>
+            <BurgerIcon active={isOpen} onClick={toggleMenu}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </BurgerIcon>
+          </MobileNavContainer>
 
-        <MobileNavLinks isopen={isOpen}>
-          <MobileNavLink to="/about" activeclassname="active">
-            O nama
-          </MobileNavLink>
-          <MobileNavLink to="/services" activeclassname="active">
-            Usluge
-          </MobileNavLink>
-          <MobileNavLink to="/contact" activeclassname="active">
-            Kontakt
-          </MobileNavLink>
-          <MobileNavLink to="/blog" activeclassname="active">
-            Fejsbuk
-          </MobileNavLink>
-        </MobileNavLinks>
+          <MobileNavLinks isopen={isOpen}>
+            <MobileNavLink to="/about" onClick={toggleMenu}>
+              O nama
+            </MobileNavLink>
+            <MobileNavLink to="/services" onClick={toggleMenu}>
+              Usluge
+            </MobileNavLink>
+            <MobileNavLink to="/contact" onClick={toggleMenu}>
+              Kontakt
+            </MobileNavLink>
+            <MobileNavLink to="/blog" onClick={toggleMenu}>
+              Fejsbuk
+            </MobileNavLink>
+          </MobileNavLinks>
 
-        <CorpText active={isOpen}>Unity Hub</CorpText>
+          <CorpText active={isOpen}>Unity Hub</CorpText>
         </MobileNavPaddedContainer>
       </MobileNavWrapper>
     );
@@ -78,22 +82,14 @@ const NavigationBar = () => {
       </LogoContainer>
 
       <NavLinks>
-        <NavLink to="/about" activeclassname="active">
-          O nama
-        </NavLink>
-        <NavLink to="/services" activeclassname="active">
-          Usluge
-        </NavLink>
-        <NavLink to="/contact" activeclassname="active">
-          Kontakt
-        </NavLink>
-        <NavLink to="/blog" activeclassname="active">
-          Fejsbuk
-        </NavLink>
+        <NavLink to="/about">O nama</NavLink>
+        <NavLink to="/services">Usluge</NavLink>
+        <NavLink to="/contact">Kontakt</NavLink>
+        <NavLink to="/blog">Fejsbuk</NavLink>
       </NavLinks>
       <JoinButton>
         <Link
-          to="/contact"
+          to="/booking"
           style={{ textDecoration: "none", color: "#090909" }}
         >
           Pridruži nam se
