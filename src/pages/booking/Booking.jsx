@@ -6,7 +6,6 @@ import { Container } from "./styles.js";
 const Booking = () => {
   return (
     <Container>
-      <h1>Booking</h1>
     </Container>
   );
 };

@@ -74,10 +74,6 @@ export const NavContainer = styled.nav`
     top: 10%;
   }
 
-  @media (max-width: 1024px) {
-    top: 5%;
-  }
-
   @media (max-width: 768px) {
     ${({ isopen }) =>
       isopen &&

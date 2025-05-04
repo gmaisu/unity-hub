@@ -277,7 +277,7 @@ export const BulletedIem = styled.li`
   }
 
   @media (max-width: 1024px) {
-    font-size: 1.5rem;
+    font-size: 2rem;
 
     &::before {
       font-size: 6rem;
