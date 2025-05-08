@@ -93,7 +93,11 @@ export const MobileContainer = styled.div`
   padding: 10rem 4rem 5rem;
 
   @media (max-width: 768px) {
-    padding: 10rem 1rem 2rem;
+    padding: 8rem 1rem 2rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 6rem 1rem 2rem;
   }
 `;
 
@@ -245,6 +249,11 @@ export const GreenBigText = styled.p`
   @media (max-width: 768px) {
     width: 100%;
   }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
+
 `;
 
 export const BorderLine = styled.hr`
@@ -289,9 +298,12 @@ export const BulletedIem = styled.li`
     width: 100%;
   }
 
-  @media (max-width: 360px) {
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 390px) {
     font-size: 1.2rem;
-    width: 100%;
   }
 `;
 
@@ -309,6 +321,10 @@ export const WhiteBigText = styled.p`
 
   @media (max-width: 768px) {
     font-size: 3rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
   }
 
   ${({ shadow }) =>
@@ -343,11 +359,19 @@ export const ThirdSectionInnerText = styled.p`
   @media (max-width: 768px) {
     text-align: center;
   }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const FourthSectionInnerText = styled(ThirdSectionInnerText)`
   font-size: 2rem;
   text-align: center;
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const RightPhoto = styled.img`
@@ -399,5 +423,9 @@ export const PaddedContainer = styled.div`
     text-align: center;
     align-items: center;
     padding: 25px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 8px;
   }
 `;

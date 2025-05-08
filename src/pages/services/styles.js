@@ -27,7 +27,11 @@ export const RowSection = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 12rem 4rem 5rem;
+    padding: 10rem 2rem 5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 8rem 1.5rem 1rem;
   }
 `;
 
@@ -46,6 +50,10 @@ export const Header = styled.p`
   @media (max-width: 768px) {
     font-size: 3rem;
   }
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
 `;
 
 export const Paragraph = styled.p`
@@ -61,7 +69,11 @@ export const Paragraph = styled.p`
   }
 
   @media (max-width: 768px) {
-    font-size: 3rem;
+    font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
   }
 `;
 
@@ -69,6 +81,14 @@ export const RoomSectionParagraph = styled(Paragraph)`
   color: #3a6e49;
   margin: 2rem 0;
   font-size: 3rem;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const BoldParagraph = styled(Paragraph)`
@@ -131,8 +151,8 @@ export const BulletedIem = styled.li`
     width: 100%;
   }
 
-  @media (max-width: 360px) {
-    font-size: 1.2rem;
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
     width: 100%;
   }
 `;
@@ -146,6 +166,19 @@ export const SectionBulletHeader = styled(BulletedIem)`
     font-size: 8rem;
     margin-right: 20px;
   }
+
+  @media (max-width: 480px) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: 390px) {
+    font-size: 2rem;
+
+    &::before {
+      font-size: 5rem;
+      margin-right: 15px;
+    }
+  }
 `;
 
 export const RoomsSectionBulletItem = styled(BulletedIem)`
@@ -154,6 +187,19 @@ export const RoomsSectionBulletItem = styled(BulletedIem)`
   &::before {
     font-size: 12rem;
     margin-right: 10px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+
+    &::before {
+      font-size: 8rem;
+      margin-right: 5px;
+    }
   }
 `;
 
@@ -218,10 +264,12 @@ export const Button = styled.button`
 
   @media (max-width: 768px) {
     font-size: 1.5rem;
+    margin-bottom: 30px;
   }
 
   @media (max-width: 480px) {
     font-size: 1rem;
+    padding: 15px 20px;
   }
 
   &:hover {
@@ -243,5 +291,9 @@ export const BottomParagraph = styled(Paragraph)`
 
   @media (max-width: 1024px) {
     font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
   }
 `;

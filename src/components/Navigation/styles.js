@@ -12,7 +12,7 @@ export const MobileNavWrapper = styled.div`
   left: 50%;
   transform: translateX(-50%);
   z-index: 999;
-  width: 90%;
+  width: 95%;
 
   ${({ isopen }) =>
     isopen &&
@@ -29,21 +29,17 @@ export const MobileNavWrapper = styled.div`
             margin: 0;
         `};
   }
-
-  @media (max-width: 390px) {
-    ${({ isopen }) =>
-      isopen &&
-      `
-            margin: 0;
-        `};
-  }
 `;
 
 export const MobileNavPaddedContainer = styled.div`
   padding: 2rem 3rem;
 
-  @media (max-width: 360px) {
-    padding: 1rem 2rem;
+  @media (max-width: 768px) {
+    padding: 0.7rem 2rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.5rem 1.5rem;
   }
 `;
 
@@ -64,21 +60,16 @@ export const NavContainer = styled.nav`
   opacity: 1;
 
   position: absolute;
-  top: 12%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 15%);
   z-index: 999;
   width: 80%;
-
-  @media (max-width: 1440px) {
-    top: 10%;
-  }
 
   @media (max-width: 768px) {
     ${({ isopen }) =>
       isopen &&
       `
-            flex-direction: column;
+        flex-direction: column;
     `}
   }
 `;
@@ -91,10 +82,10 @@ export const MobileNavLinks = styled.div`
   ${({ isopen }) =>
     isopen &&
     `
-            display: flex;
-            flex-direction: column;
-            align-content: flex-start;
-            align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        align-items: flex-start;
     `};
 `;
 
@@ -108,7 +99,7 @@ export const NavLinks = styled.ul`
     ${({ isopen }) =>
       isopen &&
       `
-            display: block;
+          display: block;
     `}
   }
 `;
@@ -183,8 +174,13 @@ export const LogoContainer = styled.div`
   cursor: pointer;
 
   @media (max-width: 768px) {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
+  }
+
+  @media (max-width: 480px) {
+    width: 45px;
+    height: 45px;
   }
 `;
 
@@ -224,28 +220,28 @@ export const BurgerIcon = styled.div`
     ${({ active }) =>
       active &&
       `
-            &:nth-child(1) {
-                top: 18px;
-                width: 0%;
-                left: 50%;
-            }
-            &:nth-child(2) {
-                transform: rotate(45deg);
-            }
-            &:nth-child(3) {
-                transform: rotate(-45deg);
-            }
-            &:nth-child(4) {
-                top: 18px;
-                width: 0%;
-                left: 50%;
-            }
-        `}
+        &:nth-child(1) {
+            top: 18px;
+            width: 0%;
+            left: 50%;
+        }
+        &:nth-child(2) {
+            transform: rotate(45deg);
+        }
+        &:nth-child(3) {
+            transform: rotate(-45deg);
+        }
+        &:nth-child(4) {
+            top: 18px;
+            width: 0%;
+            left: 50%;
+        }
+    `}
   }
 
   @media (max-width: 480px) {
-    width: 45px;
-    height: 30px;
+    width: 35px;
+    height: 25px;
 
     span {
       height: 2px;
@@ -254,23 +250,14 @@ export const BurgerIcon = styled.div`
         top: 0px;
       }
       &:nth-child(2) {
-        top: 15px;
+        top: 10px;
       }
       &:nth-child(3) {
-        top: 15px;
+        top: 10px;
       }
       &:nth-child(4) {
-        top: 30px;
+        top: 20px;
       }
-    }
-  }
-
-  @media (max-width: 390px) {
-    width: 40px;
-    height: 30px;
-
-    span {
-      height: 2px;
     }
   }
 `;

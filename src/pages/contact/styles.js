@@ -16,6 +16,10 @@ export const Container = styled.div`
     flex-direction: column;
     gap: 0;
   }
+
+  @media (max-width: 480px) {
+    padding: 8rem 1rem 2rem;
+  }
 `;
 
 export const TextContainer = styled.div`

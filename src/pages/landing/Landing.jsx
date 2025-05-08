@@ -108,7 +108,7 @@ const Landing = () => {
           </>
         )}
       </VideoSection>
-      <RowSection color={"#eeeeee"} width={"90%"}>
+      <RowSection color="#eeeeee" width="90%">
         <ColumnSection>
           <GreenBigText>
             Da li ste psiholog koji tražite prostor za upoznavanje svojih
@@ -132,11 +132,22 @@ const Landing = () => {
             Pronađite Idealnu Sobu za <br /> Vašu Psihološku Praksu.
           </WhiteBigText>
           <ThirdSectionInnerText>
-            U Unity Hub-u nudimo raznovrsne, udobne i <br /> privatne prostore
-            za psihologe: od manjih soba <br /> za individualne sesije do
-            prostranih za grupne <br /> radionice. Otkrijte našu ponudu i
-            pronađite <br />
-            savršen ambijent za rad sa vašim klijentima.
+            {isMobile ? (
+              <>
+                U Unity Hub-u nudimo raznovrsne, udobne i privatne prostore za
+                psihologe: od manjih soba za individualne sesije do prostranih
+                za grupne radionice. Otkrijte našu ponudu i pronađite savršen
+                ambijent za rad sa vašim klijentima.
+              </>
+            ) : (
+              <>
+                U Unity Hub-u nudimo raznovrsne, udobne i <br /> privatne
+                prostore za psihologe: od manjih soba <br /> za individualne
+                sesije do prostranih za grupne <br /> radionice. Otkrijte našu
+                ponudu i pronađite <br />
+                savršen ambijent za rad sa vašim klijentima.
+              </>
+            )}
           </ThirdSectionInnerText>
           <Button style={{ marginTop: "120px" }}>
             <Link
@@ -148,7 +159,7 @@ const Landing = () => {
           </Button>
         </PaddedContainer>
       </FlexColumnStartSection>
-      <RowSection color={"#3A6E49"} padding="60px 0 120px 0">
+      <RowSection color="#3A6E49" padding="60px 0 120px 0">
         <ColumnSection>
           <WhiteBigText textAlign="center" fontSize="7rem">
             Idealno mesto za vaš <br /> rad i rast vaše prakse.

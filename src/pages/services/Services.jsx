@@ -2,7 +2,7 @@ import React from "react";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
 
-import ImageSlider from "../../components/ImageSlider/ImageSlider.jsx";
+import Carousel from "../../components/Carousel/Carousel.jsx";
 
 import {
   Wrapper,
@@ -27,7 +27,7 @@ import {
   BottomParagraph,
 } from "./styles.js";
 
-import ROOMS_INFO from "./data.js"
+import ROOMS_INFO from "./data.js";
 
 const RoomsInfo = ({ title, photos, paragraph, bullets }) => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
@@ -38,7 +38,7 @@ const RoomsInfo = ({ title, photos, paragraph, bullets }) => {
       <BorderLine />
 
       {isMobile ? (
-        <ImageSlider photos={photos} />
+          <Carousel photos={photos} />
       ) : (
         <ImagesSlider>
           {photos.map((item, index) => (
@@ -68,6 +68,8 @@ const RoomsInfo = ({ title, photos, paragraph, bullets }) => {
 };
 
 const Services = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
   return (
     <Wrapper>
       <RowSection>
@@ -128,9 +130,10 @@ const Services = () => {
       </ColumnedSection>
       <BottomSection>
         <BottomParagraph>
-          Pridružite se zajednici uspešnih psihologa u Unity <br /> Hub-u!
-          Kontaktirajte nas za više informacija ili <br /> rezervišite svoj
-          idealan prostor online već danas!
+          Pridružite se zajednici uspešnih psihologa u Unity{" "}
+          {isMobile ? <></> : <br />} Hub-u! Kontaktirajte nas za više
+          informacija ili {isMobile ? <></> : <br />}rezervišite svoj idealan
+          prostor online već danas!
         </BottomParagraph>
       </BottomSection>
     </Wrapper>
