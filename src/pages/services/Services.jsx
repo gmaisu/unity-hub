@@ -57,7 +57,7 @@ const RoomsInfo = ({ title, photos, paragraph, bullets }) => {
 
       <Button>
         <Link
-          to="/booking"
+          to="/reservation"
           style={{ textDecoration: "none", color: "#090909" }}
         >
           Rezervišite prostor

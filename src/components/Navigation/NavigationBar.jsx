@@ -88,7 +88,7 @@ const NavigationBar = () => {
       </NavLinks>
       <JoinButton>
         <Link
-          to="/booking"
+          to="/reservation"
           style={{ textDecoration: "none", color: "#090909" }}
         >
           Pridruži nam se

@@ -45,6 +45,10 @@ export const InputField = styled.input`
   border: none;
   border-bottom: 1px solid #636363;
   font-family: "Gilroy-Light", lighter;
+
+  &:focus {
+  background-color: #b2ceab;
+  }
 `;
 
 export const TextAreaField = styled.textarea`

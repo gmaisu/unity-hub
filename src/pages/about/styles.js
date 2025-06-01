@@ -6,26 +6,22 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   align-content: space-around;
+  background-image: url("https://terapijskiprostor.com/images/about.webp");
+  background-size: cover;
   gap: 3rem;
   color: #ffffff;
   padding: 15rem 0 5rem 0;
+  min-height: 70vh;
 
   @media (max-width: 768px) {
+    background-image: url("https://terapijskiprostor.com/images/about-mobile.webp");
     flex-direction: column;
     gap: 0;
   }
-    
+
   @media (max-width: 480px) {
     padding: 10rem 0 5rem 0;
   }
-
-    ${({ bgphoto }) =>
-    bgphoto &&
-    `
-        background-image: url(${bgphoto});
-        background-size: cover;
-    `};
-
 `;
 
 export const LogoContainer = styled.div`

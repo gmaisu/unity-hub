@@ -8,7 +8,9 @@ import Footer from "./components/Footer/Footer";
 import Contact from "./pages/contact/Contact";
 import Landing from "./pages/landing/Landing";
 import About from "./pages/about/About";
-import Booking from "./pages/booking/Booking";
+import Reservation, {
+  ReservationVerificationRedirect,
+} from "./pages/reservation/Reservation";
 import Services from "./pages/services/Services";
 import Blog from "./pages/blog/Blog";
 import BlogPost from "./pages/blog-post/BlogPost";
@@ -34,9 +36,13 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/booking" element={<Booking />} />
+          <Route path="/reservation" element={<Reservation />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route
+            path="/reservation/verify/:verifyKey"
+            element={<ReservationVerificationRedirect />}
+          />
         </Routes>
       </Content>
       <Footer />

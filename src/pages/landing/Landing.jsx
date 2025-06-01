@@ -47,7 +47,7 @@ const Landing = () => {
               <ButtonsContainer>
                 <Button>
                   <Link
-                    to="/booking"
+                    to="/reservation"
                     style={{ textDecoration: "none", color: "#090909" }}
                   >
                     Rezervišite prostor
@@ -89,7 +89,7 @@ const Landing = () => {
               <ButtonsContainer>
                 <Button>
                   <Link
-                    to="/booking"
+                    to="/reservation"
                     style={{ textDecoration: "none", color: "#090909" }}
                   >
                     Rezervišite prostor
@@ -171,7 +171,7 @@ const Landing = () => {
           <RowButtonsContainer>
             <Button>
               <Link
-                to="/booking"
+                to="/reservation"
                 style={{ textDecoration: "none", color: "#090909" }}
               >
                 Rezervišite prostor

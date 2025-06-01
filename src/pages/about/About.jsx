@@ -5,11 +5,9 @@ import { Container, LogoContainer, Header, Description, JoinButton } from "./sty
 
 import Logo from "../../assets/logo/logo.svg";
 
-import AboutBackground from "../../assets/bg/about.webp";
-
 const About = () => {
   return (
-    <Container bgphoto={AboutBackground}>
+    <Container>
       <LogoContainer>
         <img src={Logo} />
       </LogoContainer>
@@ -22,7 +20,7 @@ const About = () => {
       </Description>
       <JoinButton>
         <Link
-          to="/contact"
+          to="/reservation"
           style={{ textDecoration: "none", color: "#090909" }}
         >
           Rezervišite prostor

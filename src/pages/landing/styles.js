@@ -61,7 +61,7 @@ export const ButtonsSection = styled.div`
   width: 30%;
 
   @media (max-width: 1680px) {
-    top: 60%;
+    top: 55%;
   }
 
   @media (max-width: 1440px) {
@@ -151,7 +151,7 @@ export const Button = styled.button`
   cursor: pointer;
   font-family: Gilroy-Light;
 
-  @media (max-width: 1440px) {
+  @media (max-width: 1680px) {
     font-size: 1.2rem;
   }
 

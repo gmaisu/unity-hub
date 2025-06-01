@@ -53,7 +53,7 @@ const ContactForm = () => {
             {...register("firstName")}
             type="text"
             id="first-name"
-            placeholder="Prezime *"
+            placeholder="Ime *"
             required
           />
           <InputField
