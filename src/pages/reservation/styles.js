@@ -22,12 +22,33 @@ export const Container = styled.div`
 
 export const VerificationSuccessContainer = styled(Container)`
   background-color: inherit;
-`
+`;
 
 export const FormContainer = styled.div`
   background-color: #98c18eb3;
   border-radius: 100rem;
   padding: 4rem 20rem;
+
+  @media (max-width: 1360px) {
+    border-radius: 30rem;
+    padding: 15rem;
+  }
+
+  @media (max-width: 1024px) {
+    border-radius: 20rem;
+    padding: 10rem;
+  }
+
+  @media (max-width: 768px) {
+    border-radius: 10rem;
+    padding: 7rem;
+  }
+
+  @media (max-width: 480px) {
+    border-radius: 5rem;
+    padding: 5rem 1rem;
+    width: 90%;
+  }
 `;
 
 export const FormHeader = styled.p`
@@ -67,6 +88,10 @@ export const MultiInputContainer = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-bottom: 1.5rem;
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 export const DatepickerWrapper = styled.div`
